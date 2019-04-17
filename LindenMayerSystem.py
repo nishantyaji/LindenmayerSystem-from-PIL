@@ -11,11 +11,12 @@ class LindenMayerSystem:
     def set_rules_dict(self, rules_dict):
         self.rules_dict = rules_dict
 
-    def display(self, turtle1=turtle.ImageTrtl()):
+    def display(self, filename, turtle1=turtle.ImageTrtl()):
         for _ in range(0, self.iterations):
             self.__apply_rules()
         self.__draw_turtle_fn(turtle1)
         turtle1.show()
+        turtle1.save(filename)
 
     def __apply_rules(self):
         new_state = ''

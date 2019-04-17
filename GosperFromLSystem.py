@@ -12,4 +12,5 @@ if __name__ == '__main__':
             '+':lambda turtle1: turtle1.left(measures_dict['angle']),}
 
     ls = LindenMayerSystem(start_string=start_string, rules_dict=rules_dict, iterations=3, fn_dict=fn_dict)
-    ls.display()
+    filename = __file__.split('.')[0] + '.bmp'
+    ls.display(filename)

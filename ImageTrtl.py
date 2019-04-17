@@ -20,7 +20,8 @@ class ImageTrtl:
         #import turtle
         #turtle.Screen().screensize()
         self.width = 800
-        self.height = 600
+        self.height = 800
+        self.dpi = (800, 800)
         self.img = Image.new("RGB", (self.width, self.height), self.bgcolor)
         self.current_pos = (self.width/2, self.height/2)
         self.heading = 0
@@ -78,6 +79,9 @@ class ImageTrtl:
 
     def show(self):
         self.img.show()
+
+    def save(self, filename):
+        self.img.save(filename, 'BMP', dpi=self.dpi)
 
     def done(self):
         self.show()
