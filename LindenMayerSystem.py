@@ -2,21 +2,22 @@ import ImageTrtl as turtle
 
 class LindenMayerSystem:
 
-    def __init__(self, start_string='', iterations=1, rules_dict={}, measures_dict={}, fn_dict={}):
+    def __init__(self, start_string='', iterations=1, rules_dict={}, measures_dict={}, fn_dict={}, filename=None):
         self.rules_dict = rules_dict
         self.state_string = start_string
         self.iterations = iterations
         self.fn_dict = fn_dict
+        self.filename = filename
 
     def set_rules_dict(self, rules_dict):
         self.rules_dict = rules_dict
 
-    def display(self, filename, turtle1=turtle.ImageTrtl()):
+    def display(self, turtle1=turtle.ImageTrtl()):
         for _ in range(0, self.iterations):
             self.__apply_rules()
         self.__draw_turtle_fn(turtle1)
         turtle1.show()
-        turtle1.save(filename)
+        turtle1.save(self.filename)
 
     def __apply_rules(self):
         new_state = ''

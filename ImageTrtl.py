@@ -81,7 +81,8 @@ class ImageTrtl:
         self.img.show()
 
     def save(self, filename):
-        self.img.save(filename, 'BMP', dpi=self.dpi)
+        if filename is not None:
+            self.img.save(filename, 'BMP', dpi=self.dpi)
 
     def done(self):
         self.show()
